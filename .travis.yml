@@ -15,8 +15,8 @@ after_success:
 # login to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # take those images to docker hub
-  - docker push mosh2018/multi-client ./client
-  - docker push mosh2018/multi-nginx ./nginx
-  - docker push mosh2018/multi-server ./server
-  - docker push mosh2018/multi-worker ./worker
+  - docker push mosh2018/multi-client
+  - docker push mosh2018/multi-nginx
+  - docker push mosh2018/multi-server
+  - docker push mosh2018/multi-worker
 
