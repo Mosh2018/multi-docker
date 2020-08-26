@@ -8,15 +8,15 @@ script:
   - docker run -e CI=true mosh2018/react-test npm run test
 
 after_success:
-  - docker build -t mosh2018/multi-client ./client
-  - docker build -t mosh2018/multi-nginx ./nginx
-  - docker build -t mosh2018/multi-server ./server
-  - docker build -t mosh2018/multi-worker ./worker
+  - docker build -t mosh2020/multi-client ./client
+  - docker build -t mosh2020/multi-nginx ./nginx
+  - docker build -t mosh2020/multi-server ./server
+  - docker build -t mosh2020/multi-worker ./worker
 # login to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # take those images to docker hub
-  - docker push mosh2018/multi-client
-  - docker push mosh2018/multi-nginx
-  - docker push mosh2018/multi-server
-  - docker push mosh2018/multi-worker
+  - docker push mosh2020/multi-client
+  - docker push mosh2020/multi-nginx
+  - docker push mosh2020/multi-server
+  - docker push mosh2020/multi-worker
 
