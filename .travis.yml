@@ -20,3 +20,15 @@ after_success:
   - docker push mosh2020/multi-server
   - docker push mosh2020/multi-worker
 
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-eu-central-1-149501274876
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
+
